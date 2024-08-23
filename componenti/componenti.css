@@ -1,0 +1,197 @@
+::-webkit-scrollbar-thumb {
+    background: #1B4965;
+    border-top: 3rem solid transparent;
+    border-bottom: 3rem solid transparent;
+    background-clip: padding-box; 
+}
+  
+::-webkit-scrollbar-thumb:hover {
+    background: #205779;
+    border-top: 3rem solid transparent;
+    border-bottom: 3rem solid transparent;
+    background-clip: padding-box;  
+}
+
+::-webkit-scrollbar {
+    width: 0.5rem;
+    display: initial; 
+}
+
+.pseudoSelect *{
+    transition: color 250ms;
+}
+  
+.selectBody > .material-symbols-outlined{
+    transform: scale(1.3) translateY(-0.3rem);
+    transition: all 0.3s ease-in-out, color 10ms ease-in-out;
+}
+  
+.pseudoSelect, .pseudoSearch {
+    font-family: 'Poppins', sans-serif;
+    position: relative;
+    font-size: 1.1rem;
+    height: 3.8rem;
+    width: 100%;
+    border-radius: 100vh;
+    outline: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    user-select: none;
+    transition: box-shadow 0.3s ease-in-out;
+
+}
+  
+.pseudoSelect > *, .pseudoSearch > *{
+    cursor: pointer;
+    border: 2px solid #3c3c3c76;
+    width: inherit;
+}
+  
+.selectBody{
+    height: inherit;
+    padding-block: 0.5rem;
+    transition: all 0.3s ease-in-out;
+    border-radius: 10vh;
+    padding-inline: 1.5rem;
+    justify-content: space-between;
+    align-items: end;
+}
+
+.pseudoSearch:hover, .pseudoSelect:hover{
+    box-shadow: 0 0 3rem #0000001f;
+}
+
+.selectBody:hover{
+    filter: drop-shadow(0 0 1rem #00000037);
+}
+  
+.selectBody:focus, .focus{
+    filter: drop-shadow(0 0 1rem #00000037);
+    border: 2px solid #1B4965;
+    outline: #1b49653f 0.2rem solid;
+}
+  
+.selectOptions{
+    position: absolute;
+    filter: drop-shadow(0 0 1rem #00000037);
+    box-shadow: 0 0 3rem #00000039;
+    top: 4.5rem;
+    border-radius: 1.5rem;
+    height: 0px;
+    border: 0;
+    transition: outline 0.3s ease-in-out, height 0.5s ease-in-out;
+    overflow-y: overlay;
+    width: calc(100% - 0.5rem);
+    overflow-x: hidden;
+    background-color: #FFF;
+}
+
+.selectOptions img{
+    height: 100%;
+    width: 100%;
+    transform: scale(3) translateX(0.2rem);
+}
+  
+.option, .risultato{
+    transition: all 0.3s ease-in-out;
+    padding: 0.5rem;
+    padding-inline: 1.5rem;
+    background-color: #FFF;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: calc(100% + 0.5rem);
+    min-height: 3rem;
+}
+
+.option span:not(.selectChk), .risultato span{
+    display: flex;
+    width: 100%;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+
+.option span:first-of-type{
+    flex-grow: 1;
+}
+
+.risultato{
+    display: initial;
+    width: calc(100%);
+}
+  
+.pseudoSelect .option:first-of-type, .pseudoSelect .risultato:first-of-type{
+    padding-top: 1rem;
+}
+  
+.pseudoSelect .option:last-of-type, .pseudoSelect .risultato:last-of-type{
+    padding-bottom: 1rem;
+}
+  
+.option:hover, .risultato:hover{
+   filter: drop-shadow(0 0 1rem #00000037);
+}
+  
+.selectDesc{
+    position: absolute;
+    background-color: transparent;
+    border: 0;
+    padding: 0.5rem 0 0 1.5rem;
+    font-size: 0.8rem;
+    z-index: 1;
+    pointer-events: none;
+}
+
+.testoSelect, .option, .risultato{
+    white-space: nowrap;
+    overflow: hidden;
+}
+  
+.pseudoSelect input, .pseudoSearch input{
+    border: 0;
+    outline: 0;
+    background-color: transparent;
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.1rem;
+    color: inherit;
+    cursor: text;
+    display: none;
+    transition: none;
+    caret-color: #1B4965;
+    width: calc(100% - 1.5rem);
+}
+
+.pseudoSearch input{
+  display: block;
+  width: 100%;
+}
+  
+.labelRis{
+    display: none;
+    padding: 1rem 1rem 0.5rem 1rem;
+    opacity: 0.75;
+    background-color: #FFF;
+    mix-blend-mode: multiply;
+}
+
+.pseudoSearch .labelRis{
+    display: block;
+}
+
+.errore{
+  animation: animErrore 0.5s ease-in-out;
+}
+  
+@keyframes animErrore{
+  20%{
+    transform: translateX(1rem);
+  }
+  50%{
+    transform: translateX(-1rem);
+  }
+}
+
+.addedOption > span:first-of-type::before{
+    content: " + ";
+}

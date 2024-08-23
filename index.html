@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html lang="en-US">
+    <head>
+        <meta charset="utf-8">
+        <link rel="icon" href="img/logo.png" type="image/png" sizes="16x16">
+        <title>Get Stock Quotes</title>
+        <meta content="width=device-width, initial-scale=1" name="viewport"/>
+        <meta name="description" content="Get Stock Quotes">
+        <meta name="keywords" content="Get Stock Quotes">
+
+        <!-- Font -->
+        <link rel="stylesheet" href="css/font.css">
+
+        <!-- CDN -->
+        <script type="text/javascript" src="./js/default-passive-events.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js" async></script>
+        <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10" async></script>
+        <script src="https://cdn.jsdelivr.net/npm/chart.js@4.2.1/dist/chart.umd.min.js" defer async></script>
+
+        <!-- Locali -->
+        <script src="environment/API_KEY.js" type="application/javascript"></script>
+        <script src="js/index.js" type="application/javascript"></script>
+        <script src="componenti/componenti.js" type="application/javascript" async></script>
+        <link rel="stylesheet" type="text/css" href="css/style.css">
+        <link rel="stylesheet" type="text/css" href="componenti/componenti.css">
+        <link rel="stylesheet" type="text/css" href="css/media_query.css">
+        <link rel="stylesheet" type="text/css" href="css/sile_mappa.css">
+
+        <!-- Supporto -->
+        <script src="./js/lib_database.js" type="application/javascript"></script>
+        <script src="./js/lib_grafica.js" type="application/javascript"></script>
+    </head>
+    <body class="flexCol">
+       <header class="flexRow">
+            <span>
+                <img src="./img/logo.png" alt="logo">
+                <h2>Alpha Vantage</h2>
+            </span>
+            <span id="headerMenu" class="flexRow">
+                <span class="material-symbols-outlined"><a href="#sezioneChart">monitoring</a></span>
+                <span class="material-symbols-outlined"><a href="#sezioneLookup">query_stats</a></span>
+            </span>
+       </header>
+       
+       <main class="flexCol">
+        <div class="sfondo mainBG"></div>
+            <div>
+                <h1>Trading, made <span class="easy">easy</span></h1>
+                <div id="mainDesc">
+                    <span>Get all the information you need about stocks. Know everything about</span>
+                    <span id="txtNome">
+                        &nbsp;
+                        <div id="txtTop"></div>
+                        <div id="txtBottom"></div>
+                    </span>
+                </div>
+            </div>
+            <div id="mainIcona">
+                <span class="material-symbols-outlined" onclick="scrollBody()">
+                    expand_more
+                </span>
+            </div>
+       </main>
+       <section id="sezioneLookup" class="flexCol">
+            <div class="csd-top csd">
+                <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
+                    <path d="M985.66,92.83C906.67,72,823.78,31,743.84,14.19c-82.26-17.34-168.06-16.33-250.45.39-57.84,11.73-114,31.07-172,41.86A600.21,600.21,0,0,1,0,27.35V120H1200V95.8C1132.19,118.92,1055.71,111.31,985.66,92.83Z" class="shape-fill"></path>
+                </svg>
+            </div>
+            
+            <div class="sectionContent flexCol">
+                <h1 id="titoloSym">Symbol Lookup</h1>
+                <div  class="descArea article lowerIndex flexRow">
+                    The form combines the <span class="hl">efficiency</span> of a selectbox with the <span class="hl">precision</span> of a searchbox, 
+                        all in one seamless interface. With the selectbox, you can <span class="hl">effortlessly</span> browse through an 
+                        <span class="hl">extensive</span> list of stock symbols and select the one that matches your investment strategy. 
+                        If the symbol you're looking for isn't listed, the searchbox enables you to search for it 
+                        with <span class="hl">ease</span>, offering you a range of possible results based on your input. Whether you prefer 
+                        to browse or search, this form provides you with the <span class="hl">freedom</span> and <span class="hl">flexibility</span> to make informed 
+                        investment decisions that align with your unique <span class="hl">goals</span>. With its intuitive design and <span class="hl">dynamic</span> 
+                        functionality, this form is an elegant solution that streamlines the investment process 
+                        and helps you achieve <span class="hl">success</span> with <span class="hl">confidence</span>.
+                </div>
+                <h2>Actions</h2>
+                <div class="artResponsive article lowerIndex flexRow">
+                    <div class="divOpzione flexRow">
+                        <div>
+                            <h3>Select</h3>
+                            <div class="pseudoSelect flexCol" id="selSimbolo">
+                                <div class="selectDesc" onclick="espandiSelect($(this))">&nbsp;Pick a symbol</div>
+                                <div class="selectBody flexRow" tabindex="0" onclick="espandiSelect($(this))">
+                                    <span class="testoSelect">Microsoft - MSFT</span>
+                                    <input type="text" placeholder="nome..." onblur="trasformaSelect($(this))" onkeyup="cercaSimbolo($(this))" onclick="event.stopPropagation()">
+                                    <span class="material-symbols-outlined" onclick="chkTrasforma($(this))">expand_more</span>
+                                </div>
+                                <div class="selectOptions flexCol">
+                                    <div class="labelRis">Type Something...</div>
+                                    <div class="option">
+                                        <span>Microsoft - MSFT</span>
+                                        <span class="selectChk material-symbols-outlined">done</span>
+                                    </div>
+                                    <div class="option">
+                                        <span>Sony - SNE</span>
+                                        <span class="selectChk material-symbols-outlined"></span>
+                                    </div>
+                                    <div class="option">
+                                        <span>Alibaba - BABA</span>
+                                        <span class="selectChk material-symbols-outlined"></span>
+                                    </div>
+                                    <div class="option">
+                                        <span>IBM - IBM</span>
+                                        <span class="selectChk material-symbols-outlined"></span>
+                                    </div>
+                                    <div class="option">
+                                        <span>Xiaomi - XIACF</span>
+                                        <span class="selectChk material-symbols-outlined"></span>
+                                    </div>
+                                    <div class="option">
+                                        <span>Apple - AAPL</span>
+                                        <span class="selectChk material-symbols-outlined"></span>
+                                    </div>
+                                    <div class="option">
+                                        <span>Google - GOOGL</span>
+                                        <span class="selectChk material-symbols-outlined"></span>
+                                    </div>
+                                    <div class="option cerca"  onclick="trasformaCerca($(this))" tabindex="0">
+                                        <span>Search...</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <p>
+                                This <span class="hl">intuitive</span>  user interface allows you to quickly navigate an multiple 
+                                <span class="hl">options</span>, and if you find yourself seeking a symbol that isn't already listed, 
+                                you can <span class="hl">seamlessly</span> integrate it into the options. 
+                            </p>
+                        </div>
+                        <img class="placeholderImg" src="./img/section_pic.webp" loading="lazy" alt="placeholder"></img>
+                        <img src="./img/section_pic.webp" loading="lazy" alt="Errore...">
+                    </div>
+                    <div class="fintoHR flexRow"><span>OR</span></div>
+                    <div class="divOpzione flexRow">
+                        <img class="placeholderImg" src="./img/section_img.webp" loading="lazy"  alt="placeholder"></img>
+                        <img src="./img/section_img.webp" loading="lazy" alt="Errore...">
+                        <div>
+                            <h3>Search</h3>
+                            <div class="pseudoSearch flexCol" onclick="$(this).find('input').focus()">
+                                <div class="selectDesc">&nbsp;Search for a symbol</div>
+                                <div class="selectBody flexRow">
+                                    <input type="text" placeholder="Search..." onfocus="focusSearch($(this))" onblur="blurSearch($(this))" onkeyup="cercaSimbolo($(this))">
+                                    <span class="material-symbols-outlined" onclick="event.stopPropagation()">close</span>
+                                </div>
+                                <div class="selectOptions flexCol">
+                                    <div class="labelRis">Type something...</div>
+                                </div>
+                            </div>
+                            <p>
+                                This <span class="hl">sleek</span> and user-friendly tool uses <span class="hl">cutting-edge</span> algorithms to generate 
+                                 possible results matching your search input, letting you find 
+                                the <span class="hl">specific</span> symbol that aligns with your investment <span class="hl">goals</span>. 
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div style="justify-content: center;" class="article lowerIndex flexRow">
+                    <div id="quote" class="flexRow">
+                        <div id="darkOverlay" onclick="chiudiMappa()"></div>
+                        <span>
+                            <div id="contMappa">
+                                <div>
+                                    <div id="mappa"></div>
+                                </div>
+                            </div>
+                            <div class="loading" id="loadingTabella">
+                                <div class="race-by flexRow"></div>
+                            </div>
+                            <table cellspacing="0" cellpadding="3" id="tabella1">
+                                <thead>
+                                    <tr>
+                                        <th>Symbol</th>
+                                        <th>Last Trade</th>
+                                        <th>Last Trade Time</th>
+    
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td id="symbol"></td>
+                                        <td id="lastTrade"></td>
+                                        <td id="lastTradeTime"></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            <table cellspacing="0" cellpadding="3" id="tabella2">
+                                <thead>
+                                    <th>Change</th>
+                                    <th>Open</th>
+                                </thead>
+                                <tbody>
+                                    <td id="change"></td>
+                                    <td id="open"></td>
+                                </tbody>
+                            </table>
+                            <table cellspacing="0" cellpadding="3" id="tabella3">
+                                <thead>
+                                    <th>Previous Close</th>
+                                    <th>Day's Low</th>
+                                </thead>
+                                <tbody>
+                                    <td id="previousClose"></td>
+                                    <td id="daysLow"></td>
+                                </tbody>
+                            </table>
+                            <table cellspacing="0" cellpadding="3" id="tabella4">
+                                <thead>
+                                    <tr>
+                                        <th>Day's High</th>
+                                        <th>Volume</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td id="daysHigh"></td>
+                                        <td id="volume"></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </span>
+                        <button id="btnMappa" onclick="mostraMappa()">
+                            <span class="material-symbols-outlined">public</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div class="csd-bottom csd">
+                <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
+                    <path d="M985.66,92.83C906.67,72,823.78,31,743.84,14.19c-82.26-17.34-168.06-16.33-250.45.39-57.84,11.73-114,31.07-172,41.86A600.21,600.21,0,0,1,0,27.35V120H1200V95.8C1132.19,118.92,1055.71,111.31,985.66,92.83Z" class="shape-fill"></path>
+                </svg>
+            </div>
+       </section>
+       <div class="cntSfondo mainBG">
+            <div class="contenuto flexCol">
+                <h1>Data Visualization</h1>
+                <div class="testo flexRow">
+                    <div class="contDescrizione"></div>
+                    <div class="contCarte flexCol">
+                        <div>
+                            <div class="cellaTesto flexCol">
+                                <h2>Visualize Market Data</h2>
+                                <p>
+                                    Our <span class="hl">user-friendly</span> web-based tool is designed to help traders and investors 
+                                    <span class="hl">effortlessly</span> generate <span class="hl">insightful</span> charts and 
+                                    graphs that allow them to visualize market quotes and trading statistics in a 
+                                    <span class="hl">sleek</span> and <span class="hl">elegant</span> way. 
+                                    With our easy-to-use interface, you can <span class="hl">quickly</span> retrieve trading data and 
+                                    let our <span class="hl">advanced algorithms</span> do the work for you. You can 
+                                    <span class="hl">customize</span> your charts and select the most <span class="hl">important </span>
+                                    data points to focus on, whether you're tracking <span class="hl">individual</span> stocks or 
+                                    analyzing <span class="hl">broader</span> market trends.
+                                </p>
+                            </div>
+                            <div class="cellaCarte flexRow">
+                                <div class="card">
+                                    <div class="grafico">
+                                        <div class="mascheraCerchio">
+                                            <div class="graficoTorta"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="card">
+                                    <div class="grafico">
+                                        <div class="mascheraBarre">
+                                            <div class="graficoBarre flexRow">
+                                            </div>
+                                            <div id="footerGrafico"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="card grow">
+                                    <div class="grafico">
+                                        <div class="graficoArea grafico"></div>
+                                    </div>
+                                </div>
+                            </div>   
+                        </div>
+                        <div>
+                            <div class="cellaCarte flexRow">
+                                <div class="card">
+                                    <div id="graficoNumero" class="flexCol grafico">100%</div>
+                                </div>
+                                <div class="card">
+                                    <div class="flexCol grafico">
+                                        <div id="graficoCerchi" class="flexRow">
+                                            <div class="cerchio"></div>
+                                            <div class="barra1"></div>
+                                            <div class="barra1"></div>
+                                            <div class="barra1"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="card grow">
+                                    <div class="grafico">
+                                        <div id="graficoCandele" class="flexRow"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="cellaTesto flexCol">
+                                <h2>Powerful & Intuitive Interface</h2>
+                                <p>
+                                    Our tool is <span class="hl">perfect</span> for both <span class="hl">experienced</span> traders and 
+                                    <span class="hl">beginners</span> who are just starting out. With <span class="hl">real-time</span> 
+                                    updates and a wide range of <span class="hl">customization</span> options, you'll be able to stay on 
+                                    top of the markets and make <span class="hl">data-driven</span> decisions that can lead to 
+                                    <span class="hl">success</span>. Our tool is an <span class="hl">invaluable resource</span> for 
+                                    anyone who wants to make <span class="hl">informed decisions</span> about their 
+                                    <span class="hl">investments</span>. So why not try it out today and start 
+                                    <span class="hl">visualizing</span> your trading data like never before?
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+       </div>
+       <section id="sezioneChart" class="flexCol">
+        <div class="csd-top csd">
+            <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
+                <path d="M985.66,92.83C906.67,72,823.78,31,743.84,14.19c-82.26-17.34-168.06-16.33-250.45.39-57.84,11.73-114,31.07-172,41.86A600.21,600.21,0,0,1,0,27.35V120H1200V95.8C1132.19,118.92,1055.71,111.31,985.66,92.83Z" class="shape-fill"></path>
+            </svg>
+        </div>
+        <div class="sectionContent flexCol">
+            <h1>Charts</h1>
+            <div class="cntSel flexRow">
+                <button id="btnDownload" class="flexCol" onclick="downloadGrafico($(this))">
+                    <div class="flexCol">
+                        <span class="material-symbols-outlined">download</span>
+                    </div>
+                </button>
+                <div class="pseudoSelect flexCol" id="selSimbolo" style="z-index: 1;">
+                    <div class="selectDesc" onclick="espandiSelect($(this))">&nbsp;Pick a Timeframe</div>
+                    <div class="selectBody flexRow" tabindex="0" onclick="espandiSelect($(this))">
+                        <span class="testoSelect">3 Years</span>
+                        <span class="material-symbols-outlined" onclick="chkTrasforma($(this))">expand_more</span>
+                    </div>
+                    <div class="selectOptions flexCol">
+                        <div class="option">
+                            <span>Real-Time</span>
+                            <span class="selectChk material-symbols-outlined"></span>
+                        </div>
+                        <div class="option">
+                            <span>1 Day</span>
+                            <span class="selectChk material-symbols-outlined"></span>
+                        </div>
+                        <div class="option">
+                            <span>5 Day</span>
+                            <span class="selectChk material-symbols-outlined"></span>
+                        </div>
+                        <div class="option">
+                            <span>1 Month</span>
+                            <span class="selectChk material-symbols-outlined"></span>
+                        </div>
+                        <div class="option">
+                            <span>3 Month</span>
+                            <span class="selectChk material-symbols-outlined"></span>
+                        </div>
+                        <div class="option">
+                            <span>Year-to-Date (YTD)</span>
+                            <span class="selectChk material-symbols-outlined"></span>
+                        </div>
+                        <div class="option">
+                            <span>1 Year</span>
+                            <span class="selectChk material-symbols-outlined"></span>
+                        </div>
+                        <div class="option">
+                            <span>3 Year</span>
+                            <span class="selectChk material-symbols-outlined">done</span>
+                        </div>
+                        <div class="option">
+                            <span>5 Year</span>
+                            <span class="selectChk material-symbols-outlined"></span>
+                        </div>
+                        <div class="option">
+                            <span>10 Year</span>
+                            <span class="selectChk material-symbols-outlined"></span>
+                        </div>
+                    </div>
+                </div>
+                <button id="switchGrafico" class="flexCol" onclick="cambiaModGrafico($(this))">
+                    <div style="overflow: hidden;" class="flexCol">
+                        <span class="material-symbols-outlined">equalizer</span>
+                    </div>
+                </button>
+            </div>
+            <div class="grow" style="z-index: 0;">
+                <canvas id="chart"></canvas>
+                <div class="race-by flexRow"></div>
+            </div>      
+        </div>
+        <div class="csd-bottom csd">
+            <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
+                <path d="M985.66,92.83C906.67,72,823.78,31,743.84,14.19c-82.26-17.34-168.06-16.33-250.45.39-57.84,11.73-114,31.07-172,41.86A600.21,600.21,0,0,1,0,27.35V120H1200V95.8C1132.19,118.92,1055.71,111.31,985.66,92.83Z" class="shape-fill"></path>
+            </svg>
+        </div>
+       </section>
+       <footer class="flexRow">
+
+       </footer>
+        <div id="divFooter" class="flexRow">
+            <div class="flexRow">
+                <a href="https://www.alphavantage.co/" target="_blank" class="flexRow">
+                    <span class="material-symbols-outlined">public</span>
+                    <span>API</span>
+                </a>
+            </div>
+            <div class="flexRow">
+                <a href="https://www.alphavantage.co/documentation/" target="_blank" class="flexRow">
+                    <span class="material-symbols-outlined">description</span>
+                    <span>Documentation</span>
+                </a>
+            </div>
+            <div class="flexRow">
+                <a href="mailto:support@alphavantage.co" target="_blank" class="flexRow">
+                    <span class="material-symbols-outlined">support</span>
+                    <span>Support</span>
+                </a>
+            </div>
+       </div>
+    </body>
+</html>

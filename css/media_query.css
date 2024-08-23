@@ -1,0 +1,730 @@
+@media screen and (max-width:2150px){
+    html{
+        font-size: 12px;
+    }
+
+    th{
+        font-size: 1.3rem;
+    }
+
+    td{
+        font-size: 1.2rem;
+    }
+
+    .cellaTesto{
+        padding: calc(var(--gap) * 6);
+        padding-top: calc(var(--gap) * 3);
+    }
+
+    .cellaTesto h2{
+        font-size: 5rem;
+    }
+
+    .cellaTesto p{
+        font-size: 2rem;
+    }
+
+    #graficoNumero{
+        font-size: 6rem !important;
+    }
+}
+
+@media screen and (max-width: 1720px){
+    th{
+        font-size: 1.1rem;
+    }
+
+    td{
+        font-size: 1rem;
+    }
+
+    .cellaTesto h2{
+        font-size: 4rem;
+    }
+
+    .cellaTesto p{
+        font-size: 1.75rem;
+    }
+}
+
+
+@media screen and (max-width: 1500px){
+    th{
+        font-size: 1.1rem;
+    }
+
+    td{
+        font-size: 1rem;
+    }
+
+    #quote{
+        gap: 1rem;
+    }
+
+    .cellaTesto{
+        padding: calc(var(--gap) * 4) !important;
+        padding-top: calc(var(--gap) * 2) !important;
+    }
+
+    .cellaTesto h2{
+        font-size: 3.5rem;
+    }
+
+    .cellaTesto p{
+        font-size: 1.75rem;
+    }
+}
+
+@media screen and (max-width: 1350px){
+    html{
+        font-size: 11px;
+    }
+    
+    th{
+        max-width: 20rem;
+        white-space: normal;
+        overflow-y: hidden;
+        padding-bottom: 0;
+    }
+
+    .cellaTesto{
+        padding: calc(var(--gap) * 2) !important;
+        padding-top: calc(var(--gap) * 4) !important;
+    }
+
+    .cellaTesto h2{
+        font-size: 3rem;
+    }
+
+    .cellaTesto p{
+        font-size: 1.75rem;
+    }
+
+    footer, #divFooter{
+        padding-inline: 10vw;
+    }
+}
+
+
+@media screen and (max-width: 1200px){
+    th{
+        font-size: 1.3vw;
+    }
+
+    td{
+        font-size: 1.2vw;
+    }
+
+    .sectionContent{
+        padding-inline: 6vw;
+    }
+
+    .descArea{
+        font-size: 1.2rem;
+    }
+
+    .divOpzione p{
+        font-size: 1.1rem;
+    }
+
+    #graficoNumero{
+        font-size: 6rem !important;
+    }
+ 
+    .cellaTesto, .cellaCarte{
+        flex-grow: initial;
+        width: calc(50% calc(var(--gap) * 2));
+    }
+
+    .contCarte > div{
+        flex-direction: column;
+    }
+
+    .contCarte > div:nth-last-of-type(1){
+        align-items: flex-end;
+        
+    }
+
+    .cellaCarte{
+        padding: var(--gap);
+        width: 50%;
+    }
+
+    .contCarte{
+         height: fit-content;
+    }
+
+    .cellaTesto{
+        min-height: 35rem;
+    }
+
+    .contenuto h1{
+        font-size: 7rem;
+    }
+
+    .cellaTesto{
+        padding: calc(var(--gap) * 4) !important;
+    }
+
+    .cellaTesto p{
+        font-size: 2rem;
+    }
+}
+
+@media screen and (max-width: 950px){
+    html{
+        font-size: 16px;
+    }
+
+    .artResponsive{
+        flex-direction: column;
+        align-items: center;
+        gap: 2rem;
+    }
+
+    .divOpzione img{
+        display: none;
+    }
+
+    .divOpzione{
+        flex-direction: column;
+        height: 100%;
+    }
+
+    .divOpzione > div{
+        width: calc(90vw - 4rem);
+    }
+
+    .fintoHR{
+        height: 0;
+        width: 100%;
+    }
+
+    .fintoHR span{
+        display: block;
+        padding-block: 0;
+        padding-inline: 0.7rem;
+    }
+
+    main, header{
+        padding-inline: 10vw;
+    }
+
+    main h1{
+        font-size: 12vw;
+    }
+
+    section h1{
+        font-size: 12vw !important;
+        margin-bottom: 1rem;
+        white-space: normal;
+    }
+
+    #mainDesc span{
+        font-size: 6vw;
+    }
+
+    header{
+        padding-inline: 6vw;
+    }
+
+    header h2{
+        font-size: 6vw;
+        white-space: nowrap;
+    }
+
+    header img{
+        height: 4.5vw;
+    }
+
+    #headerMenu{
+        width: initial;
+        gap: 1rem;
+    }
+
+    .sectionContent{
+        padding: 4rem 0 0 0;
+        height: initial;
+        padding: var(--offset) 6rem 2rem 6rem;
+    }
+
+    #titoloSym{
+        font-size: 5rem !important;
+        top: 10rem;
+    }
+
+    .sectionContent h1{
+        text-align: center;
+    }
+
+    #quote{
+        margin-top: 0;
+        flex-direction: column;
+        align-items: center;
+        gap: 4rem;
+        width: calc(95vw - 4rem);
+    }
+
+    #quote > span{
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: 2fr;
+    }
+
+    tbody tr{
+        min-width: 40%;
+    }
+
+    th, td{
+        padding-inline: 2rem;
+        font-size: 1rem;
+    }
+
+    th{
+        white-space:normal;
+        vertical-align: bottom;
+        font-weight: bold;
+    }
+
+    #symbol, #previousClose{
+        padding-left: 1rem;
+        border-radius: 10rem 0rem 0rem 10rem;
+    }
+
+    #open, #volume{
+        padding-right: 1rem;
+        border-radius: 0rem 10rem 10rem 0rem;
+    }  
+
+    body{
+        background-size: 210svh;
+    }
+
+    p, .descArea{
+        font-size: 1rem !important; 
+    }
+
+    section:first-of-type .article:not(:last-of-type){
+        padding-inline: 2rem;
+    }
+
+    section:first-of-type .article:last-of-type{
+        padding-inline: 1rem;
+        margin: 0;
+    }
+
+    .descArea{
+        padding-inline: 0 !important;
+        width: calc(90vw - 4rem);
+        margin-top: 6rem;
+    }
+    
+    #contMappa{
+        background-image: linear-gradient(to right, #00707A, #009A95);
+    }
+
+    .csd svg{
+        width: 110svh;
+    }
+
+    .contCarte{
+        --gap: 0.5rem;
+    }
+    
+    .cellaCarte{
+        --spazioTraCarte: 0.5rem;
+    }
+
+    .contenuto h1{
+        font-size: 4rem;
+    }
+
+    .cellaTesto{
+        min-height: initial;
+    }
+
+    #graficoNumero{
+        font-size: 1.75rem !important;
+    }
+
+    #footerGrafico{
+        height: 0.5rem;
+    }
+
+    .cellaTesto h2{
+        font-size: 2.5rem;
+    }
+
+    .cellaTesto p{
+        font-size: 1.1rem !important;
+    }
+
+    .card{
+        padding: 0.5rem;
+        border-radius: 1rem;
+    }
+
+    .cntSel{
+        width: auto;
+    }
+
+    #sezioneChart h1{
+        height: auto;
+        transform: none;
+    }
+
+    #divFooter{
+        flex-direction: column;
+        align-items: center;
+        padding-block: 3rem;
+    }
+
+    #divFooter a{
+        font-size: 2rem;
+    }
+
+    #divFooter .material-symbols-outlined{
+        transform: scale(1.5);
+    }
+}
+  
+@media screen and (max-width: 670px){
+    #quote > span{
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(3, 1fr);
+    }
+
+    #tabella1{
+        grid-area: 1 / 1 / 2 / 3;
+    }
+
+    #tabella2{
+        grid-area: 2 / 1 / 3 / 2;
+    }
+    #tabella3{
+        grid-area: 2 / 2 / 3 / 3;
+    }
+
+    #tabella4{
+        grid-area: 3 / 1 / 4 / 3;
+    }
+
+    #lastTradeTime, #volume, #daysLow{
+        padding-right: 1rem;
+        border-radius: 0rem 10rem 10rem 0rem;
+    }
+
+    #symbol, #change, #daysHigh{
+        padding-left: 1rem;
+        border-radius: 10rem 0rem 0rem 10rem;
+    }
+
+    #open, #previousClose{
+        border-radius: 0;
+    }
+
+    #contMappa{
+        background-image: linear-gradient(to right, #008588, #009A95);
+        overflow: visible;
+    }
+
+    #contMappa > div{
+        padding: 1rem;
+    }
+
+    #titoloSym{
+        font-size: 4rem !important;
+        top: 12rem;
+    }
+
+    #sezioneChart .sectionContent{
+        gap: 1rem;
+    }
+
+    #darkOverlay{
+        transform: none;
+    }
+}
+
+@media screen and (max-width: 530px){
+    #quote > span{
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(4, 1fr);
+    }
+
+    #quote table{
+        grid-area: initial;
+    }
+
+    th{
+        font-size: 4.5vw;
+        padding-inline: 1rem;
+        text-align: center;
+    }
+
+    td{
+        font-size: 3.5vw;
+        padding-inline: 1rem;
+    }
+
+    #open{
+        padding-right: 1rem;
+        border-radius: 0rem 10rem 10rem 0rem;
+    }
+
+    #previousClose{
+        padding-left: 1rem;
+        border-radius: 10rem 0rem 0rem 10rem;
+    }
+
+    #titoloSym{
+        font-size: 3rem !important;
+        top: 13rem;
+    }
+
+    .contenuto{
+        transform: translateY(-100px);
+    }
+
+    .contenuto h2{
+        font-size: 2rem;
+    }
+
+    #graficoNumero{
+        font-size: 1.5rem !important;
+    }
+
+    .graficoBarre{
+        padding: 0.5rem;
+        padding-top: 0.25rem;
+    }
+
+    #footerGrafico{
+        width: calc(100% - 1rem);
+    }
+
+    .cntSfondo{
+        height: 125svh;
+    }
+
+    .cntSel{
+        flex-wrap: wrap;
+        justify-content: center;
+        padding-inline: 2rem;
+    }
+
+    .cntSel .pseudoSelect, .cntSel .selectOptions {
+        order: 1;
+        width: 100%;
+        z-index: 1 !important;
+    }
+
+    .cntSel button{
+        order: 2;
+        z-index: 0 !important;
+    }
+
+    #sezioneChart > div.sectionContent.flexCol > div.grow{
+        min-height: 70vh;
+    }
+}
+
+@media screen and (max-width: 400px){
+    td, th{
+        padding-inline: 0.5rem;
+        font-size: 5vw;
+    }
+
+    #titoloSym{
+        font-size: 2rem !important;
+        top: 13rem;
+    }
+
+    .contenuto h1{
+        font-size: 2.5rem;
+    }
+
+    .contenuto{
+        transform: translateY(-25px);
+    }
+
+    .graficoBarre{
+        padding: 0;
+    }
+
+    #footerGrafico{
+        width: 100%;
+        transform: translateY(.5rem);
+    }
+
+    .cntSfondo{
+        height: 135svh;
+    }
+
+    #divFooter{
+        padding-block: 4rem;
+    }
+
+    #divFooter a{
+        font-size: 1.5rem;
+    }
+
+    #divFooter .material-symbols-outlined{
+        transform: scale(1.2);
+    }
+}
+
+/* ALTEZZA */
+@media screen and (max-height: 1000px) and (orientation: landscape){
+  .csd svg{
+    height: 77.5px;
+  }  
+
+  .sectionContent {
+    height: calc(100svh - 155px);
+    }
+
+    #graficoNumero{
+        font-size: 6rem !important;
+    }
+ 
+    .cellaTesto, .cellaCarte{
+        flex-grow: 1 !important;
+        width: fit-content;
+    }
+
+    .contCarte > div{
+        flex-direction: row;
+        height: auto;
+    }
+
+    .contCarte > div:nth-last-of-type(1){
+        align-items: center;
+        
+    }
+
+    .cellaCarte{
+        padding: var(--gap);
+        width: 25%;
+    }
+
+    .contCarte{
+         height: auto;
+    }
+
+    .cellaTesto{
+        min-height: 0;
+    }
+
+    .contenuto h1{
+        font-size: 7rem;
+    }
+
+    .cellaTesto{
+        padding: calc(var(--gap) * 2) !important;
+    }
+
+    .cellaTesto p{
+        font-size: 1.5rem;
+    }
+
+    .testo{
+        padding-block: 1rem;
+        padding-inline: 3rem;
+        flex-direction: column;
+    }
+
+    .contenuto h1 {
+        transform: translateY(0);
+        font-size: 5rem;
+    }
+
+    .card{
+        width: auto;
+        aspect-ratio: 1/1;
+    }
+
+    .card.grow{
+        aspect-ratio: 2/1;
+    }
+
+    #graficoNumero{
+        font-size: 2.5rem !important;
+        
+    }
+}
+
+@media screen and (max-height: 800px) and (orientation: landscape){
+    .divOpzione > div{
+        width: 35vw;
+    }
+
+    .article img{
+        height: 10vw;
+    }
+
+    .sectionContent {
+        padding-inline: 3vw;
+    }
+
+    #titoloSym{
+        transform: translateY(-2vh);
+    }
+} 
+
+@media screen and (max-height: 700px) and (orientation: landscape){
+    .divOpzione > div{
+        width: calc(100% - 2rem);
+    }
+
+    .article img{
+        display: none;
+    }
+
+    .sectionContent {
+        padding-inline: 3vw;
+    }
+
+    #titoloSym{
+        transform: translateY(-7vh);
+    }
+
+    .csd svg{
+        height: 38.75px;
+    }  
+    
+    .sectionContent {
+        height: calc(100svh - 77.5px);
+    }
+
+    .descArea{
+        font-size: 1rem;
+    }
+
+    th{
+        font-size: 1rem;
+        height: 3rem;
+    }
+
+    td{
+        font-size: 0.85rem;
+        height: 3rem;
+    }
+
+    #btnMappa{
+        font-size: 1rem;
+        height: 3rem;
+        width: 3rem;
+    }
+
+    #btnMappa > .material-symbols-outlined{
+        font-size: 1.5rem;
+    }
+
+    .sectionContent h1{
+        font-size: 4rem;
+    }
+
+    #sezioneChart h1{
+        transform: translate(1rem, -3rem);
+    }
+} 

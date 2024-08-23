@@ -1,0 +1,105 @@
+.gm-svpc img, 
+#mappa > div > div:nth-child(1) > div:nth-child(2) > div:nth-child(1) > div:nth-child(4) > div:nth-child(3), 
+#mappa > div > div > div:nth-child(2) > div:nth-child(1) > div:nth-child(4) > div:nth-child(4) > img{
+  filter: saturate(0) brightness(1.2);
+}
+
+.gm-svpc img{
+  transform: translate(-50%, -50%) translateX(30px) !important;
+}
+
+#mappa > div > div > div:nth-child(2) > div:nth-child(2) > div > div:nth-child(4) > div > div:nth-child(1) > img:nth-child(1),
+#mappa > div > div > div:nth-child(2) > div:nth-child(2) > div > div:nth-child(4) > div > div:nth-child(2) > img{
+  filter: sepia(800%) hue-rotate(160deg) saturate(10000%) brightness(0.6);
+}
+
+#mappa > div > div:nth-child(1) > div:nth-child(2) > div:nth-child(2) > div > div:nth-child(4) > div > div:nth-child(1) > div:nth-child(3),
+#mappa > div > div:nth-child(1) > div:nth-child(5) > div button,
+#mappa > div > div > div:nth-child(5) > div > div:nth-child(1) > ul > li > label,
+#mappa > div > div > div:nth-child(5) > div > div:nth-child(2) > ul > li > label{
+  color: white !important;
+  font-family: 'Poppins', sans-serif !important;
+}
+
+#mappa > div > div > div:nth-child(5) > div > div:nth-child(1) > ul > li > label,
+#mappa > div > div > div:nth-child(5) > div > div:nth-child(2) > ul > li > label{
+  margin-left: 0.5rem;
+}
+
+#mappa > div > div > div:nth-child(5) > div > div:nth-child(1) > ul > li > span span,
+#mappa > div > div > div:nth-child(5) > div > div:nth-child(2) > ul > li > span span{
+  filter: invert(1);
+}
+
+#mappa > div > div > div:nth-child(17) > div{
+  display: none !important;
+}
+
+#mappa > div > div > div:nth-child(2) > div:nth-child(2) > div > div:nth-child(4) > div > div:nth-child(1) > div:nth-child(3){
+  background: none !important;
+  font-family: 'Poppins', sans-serif !important;
+}
+
+.gm-style-mtc:nth-of-type(1) button,
+#mappa > div > div > div:nth-child(5) > div > div:nth-child(1) > ul,
+#mappa > div > div > div:nth-child(5) > div > div:nth-child(2) > ul{
+  background: none !important;
+  background-image: linear-gradient(to right, #004961, #004961) !important;
+  border-radius: 0.5rem !important;
+  filter: drop-shadow(0 0 1rem #002531);
+}
+
+#mappa > div > div > div:nth-child(5) > div > div:nth-child(1) > ul > li,
+#mappa > div > div > div:nth-child(5) > div > div:nth-child(2) > ul > li,
+#mappa > div > div > div:nth-child(5) > div > div:nth-child(1) > ul,
+#mappa > div > div > div:nth-child(14) > div > div.gmnoprint > div,
+#mappa > div > div > div:nth-child(14) > div > div.gmnoprint > div > div{
+  background-color: transparent !important;
+}
+
+#mappa > div > div > div:nth-child(5) > div > div:nth-child(1) > ul,
+#mappa > div > div > div:nth-child(5) > div > div:nth-child(2) > ul{
+  transform: translateY(0.5rem) !important;
+}
+
+.gm-style-mtc:nth-of-type(2) button{
+  transform: translateX(0.5rem) !important;
+  background: none !important;
+  background-image: linear-gradient(to right, #004d63, #004d63) !important;
+  border-radius: 0.5rem !important;
+  filter: drop-shadow(0 0 1rem #002531);
+}
+
+#mappa > div > div > div:nth-child(9) > button, 
+#mappa > div > div > div:nth-child(14) > div > div:nth-child(3) > div button, 
+#mappa > div > div > div:nth-child(14) > div > div.gm-svpc,
+#mappa > div > div > div:nth-child(14) > div > div.gmnoprint > div > button{
+  border-radius: 0.5rem !important;
+  background: none !important;
+  background-image: linear-gradient(to right, #009491, #009793) !important;
+  filter: drop-shadow(0 0 1rem #002531);
+}
+
+#mappa > div > div > div:nth-child(9) > button *, 
+#mappa > div > div > div:nth-child(14) > div > div:nth-child(3) > div > button *, 
+#mappa > div > div > div:nth-child(14) > div > div.gm-svpc,
+#mappa > div > div > div:nth-child(14) > div > div.gmnoprint > div > button > img{
+  filter: invert(1) brightness(10) !important;
+}
+
+#mappa > div > div > div:nth-child(14) > div > div:nth-child(3) > div{
+  background: none !important;
+  box-shadow: none !important;
+}
+
+#mappa > div > div > div:nth-child(14) > div > div:nth-child(3) > div > div{
+  display: none !important;
+}
+#mappa > div > div > div:nth-child(14) > div > div:nth-child(3) > div > button:nth-child(1){
+  transform: translateY(-0.5rem);
+}
+
+#mappa > div > div > div:nth-child(14) > div > div.gm-svpc,
+#mappa > div > div > div:nth-child(15) > div > a > div > img{
+  filter: drop-shadow(0 0 1rem #002531) !important;
+}
